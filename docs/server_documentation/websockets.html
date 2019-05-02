@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+
+<html lang="en-US" style="height: 100%;">
+<head>
+    <title>COM S 309: CyFire</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta content="Steven Sheets" name="author">
+    <meta content="CyFire. Server Documentation: Websockets" name="description">
+    <!--[if lt IE 9] -->
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <!--[endif] -->
+</head>
+
+<body>
+<header><h1><strong>COM S 309</strong></h1></header>
+<header><h1>CyFire: Websockets</h1></header>
+
+<nav>
+    <h2>
+        <li>
+            <a href="../index.html">Back to index.html.</a>
+        </li>
+    </h2>
+    <h2>
+        <li>
+            <a href="../server_documentation.html">Back to server_documentation.html.</a>
+        </li>
+    </h2>
+</nav>
+
+<main>
+    <h2>
+        <p>
+            Websockets permits CyFire to allow users to be able to interact with each other
+            through a websocket server. This package consists of configuration class, as well
+            as a server class. In order to be used by the frontend, the server endpoint
+            that needs to be used it /websockets/{net_id}, where the net_id is the net_id that
+            the user logged in is trying to privately message.
+        </p>
+        <p>
+            It is currently set up so that when a person goes to message another user, it will
+            automatically append a "@{receiver_net_id}" to the start of the message. The reason
+            for this is somewhat lazy, as this is a sort of jank solution to a bigger problem.
+            That being, there is only technically one "socket", but if all messages sent
+            between users are "private" "@'ed" messages, then it won't be noticed.
+        </p>
+        <p>
+            In the future I hope to better understand websockets so I can implement
+            one-on-one chatrooms in a much more elegant solution.
+        </p>
+    </h2>
+</main>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+
+<html lang="en-US" style="height: 100%;">
+<head>
+    <title>COM S 309: CyFire</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="UTF-8">
+    <meta content="Steven Sheets" name="author">
+    <meta content="CyFire. Server Documentation: Email" name="description">
+    <!--[if lt IE 9] -->
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <!--[endif] -->
+</head>
+
+<body>
+<header><h1><strong>COM S 309</strong></h1></header>
+<header><h1>CyFire: Email</h1></header>
+
+<nav>
+    <h2>
+        <li>
+            <a href="../index.html">Back to index.html.</a>
+        </li>
+    </h2>
+    <h2>
+        <li>
+            <a href="../server_documentation.html">Back to server_documentation.html.</a>
+        </li>
+    </h2>
+</nav>
+
+<main>
+    <h2>
+        <p>
+            The "email" package consists of both a configuration class as well as a rest controller.
+            The configuration class sets up the backend content required for sending emails. I chose to
+            use Gmail and Spring. The host, port, username, and password, can be found in the
+            application.properties file. Without these set it, emails <b>can not be sent.</b>
+
+        </p>
+        <p>
+            The controller takes care of everything else, and needs only to be called by the
+            front-end by using 'server_name'/send_code, with the same parameters <b>just used</b>
+            to register the user. This should be as simple as saving the parameters used in the
+            registration page, and clicking a button that says something like "Send Code".
+        </p>
+        <p>
+            In the future, this feature could also be used for purposes outside of verification.
+            Such examples include (@342 on Piazza) resetting your password, updating your gender,
+            updating your age (although, I would like to implement birthdays so this would be done
+            automatically), etc.!
+        </p>
+    </h2>
+</main>
+
+</body>
+
+</html>
