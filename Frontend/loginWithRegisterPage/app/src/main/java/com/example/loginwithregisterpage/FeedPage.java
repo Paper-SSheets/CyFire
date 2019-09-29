@@ -1,15 +1,9 @@
 package com.example.loginwithregisterpage;
 
 
-
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.NavigationView;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -46,10 +40,9 @@ public class FeedPage extends AppCompatActivity {
     /*
     Loads the users from the server into the array of type UserAccount users. Will then use this array to display users on screen.
      */
-    public void getUsers()
-    {
+    public void getUsers() {
         String url = "http://cs309-vc-3.misc.iastate.edu:8080/users";
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>()  {
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
                 try {
@@ -90,27 +83,26 @@ public class FeedPage extends AppCompatActivity {
     /*
     Takes in a user and displays in on the screen as a button
      */
-    private void displayUser(final UserAccount userToDisplay)
-    {
+    private void displayUser(final UserAccount userToDisplay) {
 
-            LinearLayout layout = findViewById(R.id.linearLayout);
-            layout.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout layout = findViewById(R.id.linearLayout);
+        layout.setOrientation(LinearLayout.VERTICAL);
 
-            Button button = new Button(this);
+        Button button = new Button(this);
 
-            if(userToDisplay != null)
-                button.setText(userToDisplay.getFirstName() + " " + userToDisplay.getLastName());
+        if (userToDisplay != null)
+            button.setText(userToDisplay.getFirstName() + " " + userToDisplay.getLastName());
 
-            else{
-                Toast.makeText(FeedPage.this, "No info to display", Toast.LENGTH_SHORT).show();
+        else {
+            Toast.makeText(FeedPage.this, "No info to display", Toast.LENGTH_SHORT).show();
+        }
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openUserToView(userToDisplay);
             }
-
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    openUserToView(userToDisplay);
-                }
-            });
+        });
 
         layout.addView(button);
     }
@@ -118,8 +110,7 @@ public class FeedPage extends AppCompatActivity {
     /*
     Opens when user clicks on another users button, sends name, major, class and netID
      */
-    public void openUserToView(UserAccount user)
-    {
+    public void openUserToView(UserAccount user) {
         Intent i = new Intent(getApplicationContext(), userToView.class);
 
         i.putExtra("userName", user.getFirstName() + " " + user.getLastName());

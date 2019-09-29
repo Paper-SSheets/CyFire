@@ -1,19 +1,19 @@
 {
-    "logs": [
+  "logs": [
+    {
+      "outputFile": "/Users/andrewmarek/team_70/Experiments/Andrew/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
+      "map": [
         {
-            "outputFile": "/Users/andrewmarek/team_70/Experiments/Andrew/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h720dp-v13/values-h720dp-v13.xml",
-            "map": [
-                {
-                    "source": "/Users/andrewmarek/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/a56aaf23070dfb894f2d3f5e7719a7b8/res/values-h720dp-v13/values-h720dp-v13.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "66",
-                        "endOffsets": "117"
-                    }
-                }
-            ]
+          "source": "/Users/andrewmarek/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/a56aaf23070dfb894f2d3f5e7719a7b8/res/values-h720dp-v13/values-h720dp-v13.xml",
+          "from": {
+            "startLines": "2",
+            "startColumns": "4",
+            "startOffsets": "55",
+            "endColumns": "66",
+            "endOffsets": "117"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

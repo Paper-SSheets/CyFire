@@ -1,97 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
-        android:id="@+id/relative_contents_wrapper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:id="@+id/relative_contents_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/profImage"
-            android:layout_width="match_parent"
-            android:layout_height="500px"
-            app:srcCompat="@color/colorAccent" />
+                android:id="@+id/profImage"
+                android:layout_width="match_parent"
+                android:layout_height="500px"
+                app:srcCompat="@color/colorAccent"/>
         <TextView
-            android:id="@+id/nameText"
-            android:layout_below="@id/profImage"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Name: "
-            android:paddingLeft="10dp"/>
+                android:id="@+id/nameText"
+                android:layout_below="@id/profImage"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Name: "
+                android:paddingLeft="10dp"/>
         <TextView
-            android:id="@+id/emailText"
-            android:text="Email: "
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@+id/nameText"
-            android:paddingLeft="10dp"/>
+                android:id="@+id/emailText"
+                android:text="Email: "
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/nameText"
+                android:paddingLeft="10dp"/>
 
         <TextView
-            android:id="@+id/ageText"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/emailText"
-            android:text="Age: "
-            android:paddingLeft="10dp"/>
+                android:id="@+id/ageText"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/emailText"
+                android:text="Age: "
+                android:paddingLeft="10dp"/>
         <TextView
-            android:id="@+id/majorText"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/ageText"
-            android:text="Major: "
-            android:paddingLeft="10dp"
-            />
+                android:id="@+id/majorText"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/ageText"
+                android:text="Major: "
+                android:paddingLeft="10dp"
+        />
         <TextView
-            android:id="@+id/genderText"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/majorText"
-            android:text="Gender: "
-            android:paddingLeft="10dp"
-            />
+                android:id="@+id/genderText"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/majorText"
+                android:text="Gender: "
+                android:paddingLeft="10dp"
+        />
         <TextView
-            android:id="@+id/birthdayText"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/genderText"
-            android:text="Birthday: "
-            android:paddingLeft="10dp"
-            />
+                android:id="@+id/birthdayText"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/genderText"
+                android:text="Birthday: "
+                android:paddingLeft="10dp"
+        />
         <TextView
-            android:id="@+id/classificationText"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/birthdayText"
-            android:text="Classification: "
-            android:paddingLeft="10dp"
-            />
+                android:id="@+id/classificationText"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/birthdayText"
+                android:text="Classification: "
+                android:paddingLeft="10dp"
+        />
         <TextView
-            android:id="@+id/passwordText"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@id/classificationText"
-            android:paddingLeft="10dp"
-            android:text="Password:"/>
+                android:id="@+id/passwordText"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@id/classificationText"
+                android:paddingLeft="10dp"
+                android:text="Password:"/>
 
         <!-- Wrapper for text box -->
         <FrameLayout
-            android:paddingLeft="10dp"
-            android:id="@+id/wrapper_text_box"
-            android:layout_below="@id/passwordText"
-            android:layout_width="match_parent"
-            android:layout_height="300px">
+                android:paddingLeft="10dp"
+                android:id="@+id/wrapper_text_box"
+                android:layout_below="@id/passwordText"
+                android:layout_width="match_parent"
+                android:layout_height="300px">
 
             <EditText
-            android:text="Tell me about yourself"
-            android:layout_width="match_parent"
-            android:layout_height="300px"
-            android:layout_below="@id/classificationText"/>
+                    android:text="Tell me about yourself"
+                    android:layout_width="match_parent"
+                    android:layout_height="300px"
+                    android:layout_below="@id/classificationText"/>
 
         </FrameLayout>
         <!-- End wrapper for text box -->

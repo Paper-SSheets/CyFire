@@ -14,101 +14,93 @@ public class UserAccount {
     private String likes = "";
     private String matches = "";
 
+    public String getMatches() {
+        return matches;
+    }
 
+    public void setMatches(String matches) {
+        this.matches = matches;
+    }
 
-    public void setFirstName(String first)
-   {
-       firstName = first;
-   }
+    public String getLikes() {
+        return likes;
+    }
 
-    public void setLastName(String last)
-   {
-        lastName = last;
-   }
+    public void setLikes(String like) {
+        likes = like;
+    }
 
-    public void setPhoneNumber(String num)
-   {
-       phoneNumber = num;
-   }
-
-    public void setGender(String gen)
-   {
-       gender = gen;
-   }
-
-    public void setMajor(String maj)
-   {
-       major = maj;
-   }
-
-    public void setPassword(String pass) {password = pass;}
-
-    public void setNetID(String id)
-   {
-       netID = id;
-   }
-
-   public void setClassification(String theClass) {classification = theClass;}
-
-   public void setAge(String theAge) {age = theAge;}
-
-   public void setLikes(String like) {likes = like;}
-
-
-   public void setMatches(String matches) {this.matches = matches;}
-
-   public String getMatches() {return matches; }
-
-    public String getLikes() { return likes;}
-
-
-    public String getFirstName()
-    {
+    public String getFirstName() {
         return firstName;
     }
 
-    public String getLastName()
-    {
+    public void setFirstName(String first) {
+        firstName = first;
+    }
+
+    public String getLastName() {
         return lastName;
     }
 
-    public String getPhoneNumber()
-    {
+    public void setLastName(String last) {
+        lastName = last;
+    }
+
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public String getGender()
-    {
+    public void setPhoneNumber(String num) {
+        phoneNumber = num;
+    }
+
+    public String getGender() {
         return gender;
     }
 
-    public String getMajor()
-    {
+    public void setGender(String gen) {
+        gender = gen;
+    }
+
+    public String getMajor() {
         return major;
     }
 
-    public String getNetID()
-    {
+    public void setMajor(String maj) {
+        major = maj;
+    }
+
+    public String getNetID() {
         return netID;
     }
 
-    public String getPassword()
-    {
+    public void setNetID(String id) {
+        netID = id;
+    }
+
+    public String getPassword() {
         return password;
     }
 
-    public String getClassification()
-    {
+    public void setPassword(String pass) {
+        password = pass;
+    }
+
+    public String getClassification() {
         return classification;
     }
 
-    public String getAge()
-    {
+    public void setClassification(String theClass) {
+        classification = theClass;
+    }
+
+    public String getAge() {
         return age;
     }
 
-
-
+    public void setAge(String theAge) {
+        age = theAge;
+    }
 
 
 }

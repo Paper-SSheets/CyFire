@@ -1,5 +1,5 @@
 *.class
-*.properties
+# *.properties
 .DS_Store
 *.project
 *.classpath
@@ -32,19 +32,16 @@
 /.nb-gradle/
 /build/
 
-*.iml
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
 /build
 /captures
 .externalNativeBuild
 
-.metadata
 bin/
 tmp/
 *.tmp
@@ -69,9 +66,6 @@ tmp/
 # CDT- autotools
 .autotools
 
-# Java annotation processor (APT)
-.factorypath
-
 # PDT-specific (PHP Development Tools)
 .buildpath
 
@@ -84,9 +78,6 @@ tmp/
 # TeXlipse plugin
 .texlipse
 
-# STS (Spring Tool Suite)
-.springBeans
-
 # Code Recommenders
 .recommenders/
 
@@ -97,3 +88,6 @@ tmp/
 .cache-main
 .scala_dependencies
 .worksheet
+gen/
+Backend/CyFire/src/main/resources/
+Backend/CyFire/target/classes/

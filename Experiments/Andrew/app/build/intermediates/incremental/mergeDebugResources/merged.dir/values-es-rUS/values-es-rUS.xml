@@ -5,7 +5,8 @@
     <string msgid="3588849162933574182" name="abc_action_menu_overflow_description">"Más opciones"</string>
     <string msgid="4076576682505996667" name="abc_action_mode_done">"Listo"</string>
     <string msgid="7468859129482906941" name="abc_activity_chooser_view_see_all">"Ver todo"</string>
-    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Elige una aplicación."</string>
+    <string msgid="2031811694353399454" name="abc_activitychooserview_choose_application">"Elige una aplicación."
+    </string>
     <string msgid="121134116657445385" name="abc_capital_off">"DESACTIVADO"</string>
     <string msgid="3405795526292276155" name="abc_capital_on">"ACTIVADO"</string>
     <string msgid="1302280443949172191" name="abc_menu_alt_shortcut_label">"Alt+"</string>
@@ -25,7 +26,9 @@
     <string msgid="8928215447528550784" name="abc_searchview_description_submit">"Enviar consulta"</string>
     <string msgid="893419373245838918" name="abc_searchview_description_voice">"Búsqueda por voz"</string>
     <string msgid="3421042268587513524" name="abc_shareactionprovider_share_with">"Compartir con"</string>
-    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Compartir con <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="3300176832234831527" name="abc_shareactionprovider_share_with_application">"Compartir con <ns1:g
+            id="APPLICATION_NAME">%s</ns1:g>"
+    </string>
     <string msgid="1603543279005712093" name="abc_toolbar_collapse_description">"Contraer"</string>
     <string msgid="146198913615257606" name="search_menu_title">"Buscar"</string>
     <string msgid="7988687684186075107" name="status_bar_notification_info_overflow">"999+"</string>

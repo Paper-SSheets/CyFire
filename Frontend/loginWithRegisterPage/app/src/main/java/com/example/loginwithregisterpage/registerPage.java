@@ -3,35 +3,25 @@ package com.example.loginwithregisterpage;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class registerPage extends AppCompatActivity {
 
+    AlertDialog.Builder builder;
+    String server_url = "http://cs309-vc-3.misc.iastate.edu:8080/users/new";
     //private RequestQueue mQueue;
     private EditText firstName, lastName, phoneNumber, gender, major, password, classification, netID, age;
     private Button theRegisterButton;
-    AlertDialog.Builder builder;
-
-    String server_url = "http://cs309-vc-3.misc.iastate.edu:8080/users/new";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,11 +81,9 @@ public class registerPage extends AppCompatActivity {
         });
 
 
-
     }
 
-    private void initScreenStuff()
-    {
+    private void initScreenStuff() {
         // get edit texts and buttons from the screen
         firstName = findViewById(R.id.firstNameSpace);
         lastName = findViewById(R.id.lastNameSpace);
@@ -109,8 +97,7 @@ public class registerPage extends AppCompatActivity {
         theRegisterButton = findViewById(R.id.registerButton);
     }
 
-    private void loadData(JSONObject toSend)
-    {
+    private void loadData(JSONObject toSend) {
         try {
             toSend.put("first_name", firstName.getText().toString());
             toSend.put("last_name", lastName.getText().toString());
@@ -121,7 +108,7 @@ public class registerPage extends AppCompatActivity {
             toSend.put("classification", classification.getText().toString());
             toSend.put("net_id", netID.getText().toString().toLowerCase() + "@iastate.edu");
             toSend.put("age", age.getText().toString());
-        } catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
         }
     }

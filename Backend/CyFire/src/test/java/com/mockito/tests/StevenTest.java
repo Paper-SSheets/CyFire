@@ -1,13 +1,8 @@
 package com.mockito.tests;
 
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import com.cyfire.users.User;
+import com.cyfire.users.UserController;
+import com.cyfire.users.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -15,94 +10,89 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.cyfire.users.User;
-import com.cyfire.users.UserController;
-import com.cyfire.users.UserRepository;
+import java.util.ArrayList;
+import java.util.List;
 
-public class StevenTest
-{
-	@InjectMocks
-	UserController userController;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
-	@Autowired
-	@Mock
-	UserRepository userRepository;
+public class StevenTest {
+    @InjectMocks
+    UserController userController;
 
-	@Before
-	public void init()
-	{
-		MockitoAnnotations.initMocks(this);
-	}
+    @Autowired
+    @Mock
+    UserRepository userRepository;
 
-	@Test
-	public void findUserByNetIDTest()
-	{
-		User steven = new User("Steven", "Sheets", "641-895-0122", "Male", "Software Engineering", "CS309isfun",
-				"Sophomore", "smsheets", 19, 902138, 902138, true);
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
 
-		userController.saveUser(steven);
+    @Test
+    public void findUserByNetIDTest() {
+        User steven = new User("Steven", "Sheets", "641-895-0122", "Male", "Software Engineering", "CS309isfun",
+                "Sophomore", "smsheets", 19, 902138, 902138, true);
 
-		when(userController.usersRepository.findUserByNetID("smsheets")).thenReturn(steven);
+        userController.saveUser(steven);
 
-		assertEquals(steven, userController.usersRepository.findUserByNetID("smsheets"));
-	}
+        when(userController.usersRepository.findUserByNetID("smsheets")).thenReturn(steven);
 
-	@Test
-	public void getAllUsersTest()
-	{
-		List<User> userList = new ArrayList<User>();
+        assertEquals(steven, userController.usersRepository.findUserByNetID("smsheets"));
+    }
 
-		User steven = new User("Steven", "Sheets", "641-895-0122", "Male", "Software Engineering", "CS309isfun",
-				"Junior", "smsheets", 19, 9021348, 9021348, true);
+    @Test
+    public void getAllUsersTest() {
+        List<User> userList = new ArrayList<User>();
 
-		User andrew = new User("Andrew", "Marek", "666-420-8008", "Male", "Software Engineering", "CS309isfun",
-				"Junior", "andmarek", 20, 1234567, 1234567, true);
+        User steven = new User("Steven", "Sheets", "641-895-0122", "Male", "Software Engineering", "CS309isfun",
+                "Junior", "smsheets", 19, 9021348, 9021348, true);
 
-		User jared = new User("Jared", "Weiland", "642-222-3333", "Male", "Software Engineering", "Esketit", "Junior",
-				"jweiland", 19, 7654321, 7654321, true);
+        User andrew = new User("Andrew", "Marek", "666-420-8008", "Male", "Software Engineering", "CS309isfun",
+                "Junior", "andmarek", 20, 1234567, 1234567, true);
 
-		User vamsi = new User("Vamsi", "Calpakkam", "757-816-5246", "Male", "Computer Science", "qwerty123", "Graduate",
-				"vamsi", 19, 1234569, 1234568, false);
+        User jared = new User("Jared", "Weiland", "642-222-3333", "Male", "Software Engineering", "Esketit", "Junior",
+                "jweiland", 19, 7654321, 7654321, true);
 
-		addToUserList(userList, steven, andrew, jared, vamsi);
+        User vamsi = new User("Vamsi", "Calpakkam", "757-816-5246", "Male", "Computer Science", "qwerty123", "Graduate",
+                "vamsi", 19, 1234569, 1234568, false);
 
-		saveAllTheUsers(steven, andrew, jared, vamsi);
+        addToUserList(userList, steven, andrew, jared, vamsi);
 
-		when(userRepository.findAll()).thenReturn(userList);
+        saveAllTheUsers(steven, andrew, jared, vamsi);
 
-		List<User> theUsers = userRepository.findAll();
+        when(userRepository.findAll()).thenReturn(userList);
 
-		assertEquals(4, theUsers.size());
-		verify(userRepository, times(1)).findAll();
-	}
+        List<User> theUsers = userRepository.findAll();
 
-	private void saveAllTheUsers(User steven, User andrew, User jared, User vamsi)
-	{ // Do not need userController as a parameter because it is a global variable.
-		userController.saveUser(steven);
-		userController.saveUser(andrew);
-		userController.saveUser(jared);
-		userController.saveUser(vamsi);
-	}
+        assertEquals(4, theUsers.size());
+        verify(userRepository, times(1)).findAll();
+    }
 
-	private void addToUserList(List<User> userList, User steven, User andrew, User jared, User vamsi)
-	{
-		userList.add(steven);
-		userList.add(andrew);
-		userList.add(jared);
-		userList.add(vamsi);
-	}
+    private void saveAllTheUsers(User steven, User andrew, User jared, User vamsi) { // Do not need userController as a parameter because it is a global variable.
+        userController.saveUser(steven);
+        userController.saveUser(andrew);
+        userController.saveUser(jared);
+        userController.saveUser(vamsi);
+    }
 
-	@Test
-	public void saveEnteredCodeTest()
-	{
-		User vamsi = new User("Vamsi", "Calpakkam", "757-816-5246", "Male", "Computer Science", "qwerty123", "Graduate",
-				"vamsi", 19, 1234569, 1234568, false);
+    private void addToUserList(List<User> userList, User steven, User andrew, User jared, User vamsi) {
+        userList.add(steven);
+        userList.add(andrew);
+        userList.add(jared);
+        userList.add(vamsi);
+    }
 
-		when(userController.saveUser(vamsi)).thenReturn(vamsi.getNetID());
+    @Test
+    public void saveEnteredCodeTest() {
+        User vamsi = new User("Vamsi", "Calpakkam", "757-816-5246", "Male", "Computer Science", "qwerty123", "Graduate",
+                "vamsi", 19, 1234569, 1234568, false);
 
-		userController.setUserEnteredCode(vamsi.getCode(), "vamsi");
+        when(userController.saveUser(vamsi)).thenReturn(vamsi.getNetID());
 
-	//	when(userController.ifCodesMatch("vamsi")).thenReturn(true);
-	}
+        userController.setUserEnteredCode(vamsi.getCode(), "vamsi");
+
+        //	when(userController.ifCodesMatch("vamsi")).thenReturn(true);
+    }
 
 }

@@ -1,11 +1,5 @@
 package com.example.loginwithregisterpage;
 
-import java.io.BufferedReader;
-import java.io.IOError;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -15,10 +9,10 @@ import java.util.Map;
 
 public class PutUtility {
 
-    private Map<String, String> params = new HashMap<>();
     private static HttpURLConnection httpConnection;
     private static BufferedReader reader;
     private static String Content;
+    private Map<String, String> params = new HashMap<>();
     private StringBuffer sb1;
     private StringBuffer response;
 

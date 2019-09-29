@@ -1,43 +1,32 @@
 package com.example.loginwithregisterpage;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-//Volley Imports
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
-
-
-//JSON imports
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
+//Volley Imports
+//JSON imports
 
 
 public class MainActivity extends AppCompatActivity {
 
+    public static UserAccount currentUser = new UserAccount();
     RequestQueue mQueue;
     EditText emailEditText;
     EditText passwordEditText;
     Boolean verified = false;
-
-
-    public static UserAccount currentUser = new UserAccount();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,17 +38,15 @@ public class MainActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         mQueue = Volley.newRequestQueue(this);
 
-    openProfilePage();
+        openProfilePage();
     }
 
-    public void openRegisterPage()
-    {
+    public void openRegisterPage() {
         Intent openIt = new Intent(this, registerPage.class);
         startActivity(openIt);
     }
 
-    public void openProfilePage()
-    {
+    public void openProfilePage() {
         Intent i = new Intent(getApplicationContext(), profilePage.class);
 
         // send the users email to the home page
@@ -73,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             emailEditText.setText("");
             passwordEditText.setText("");
-        }
-        else if (!verified){
+        } else if (!verified) {
             Toast.makeText(MainActivity.this, "Invalid Login Information", Toast.LENGTH_SHORT).show();
         }
     }
@@ -95,10 +81,8 @@ public class MainActivity extends AppCompatActivity {
                         String thePassword = user.getString("userPassword");
 
 
-
-
                         // check if email and password match
-                        if(mail.equals(emailEditText.getText().toString()) && thePassword.equals(passwordEditText.getText().toString())){
+                        if (mail.equals(emailEditText.getText().toString()) && thePassword.equals(passwordEditText.getText().toString())) {
                             verified = true;
                             currentUser.setFirstName(user.getString("firstName"));
                             currentUser.setLastName(user.getString("lastName"));

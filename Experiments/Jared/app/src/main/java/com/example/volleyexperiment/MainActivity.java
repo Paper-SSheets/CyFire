@@ -1,7 +1,7 @@
 package com.example.volleyexperiment;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -11,7 +11,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RequestQueue mQueue;
     private TextView mTextViewResult;
     //    private TextView email;
-   // private TextView major;
+    // private TextView major;
 //    private TextView phoneNumber;
 
 
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTextViewResult = findViewById(R.id.text_view_result);
 //        email = findViewById(R.id.emailEditText);
- //       major = findViewById(R.id.majorEditText);
+        //       major = findViewById(R.id.majorEditText);
 //        phoneNumber = findViewById(R.id.phoneNumberEditText);
         Button loadButton = findViewById(R.id.loadButton);
 
@@ -45,20 +44,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void loadJsonInfo()
-    {
+    private void loadJsonInfo() {
         String url = "https://api.myjson.com/bins/kp9wz";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>(){
+                new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(JSONObject response)
-                    {
+                    public void onResponse(JSONObject response) {
                         try {
                             JSONArray jsonArray = response.getJSONArray("employees");
 
-                            for(int i = 0; i < jsonArray.length(); i++)
-                            {
+                            for (int i = 0; i < jsonArray.length(); i++) {
                                 JSONObject employee = jsonArray.getJSONObject(i);
 
                                 String firstName = employee.getString("firstname");
@@ -70,16 +66,14 @@ public class MainActivity extends AppCompatActivity {
                             }
 
 
-
-                        } catch (JSONException e){
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
 
                     }
                 }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError error)
-            {
+            public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
         });

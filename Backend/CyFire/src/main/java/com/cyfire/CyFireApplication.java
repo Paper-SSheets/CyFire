@@ -5,17 +5,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Driver class for CyFire.
- * 
- * @author Steven Marshall Sheets
  *
+ * @author Steven Marshall Sheets
  */
 @SpringBootApplication
-public class CyFireApplication
-{
+public class CyFireApplication {
 
-	public static void main(String[] args)
-	{
-		SpringApplication.run(CyFireApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CyFireApplication.class, args);
+    }
 
 }

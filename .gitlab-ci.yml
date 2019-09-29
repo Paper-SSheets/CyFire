@@ -17,7 +17,7 @@ maven-build:
   script:
     - cd Backend/CyFire
     - mvn package -B
-  
+
 # artifacts are created when job executes successfully, and can be manually downloaded from GitLab GUI.
 # artifacts are not mandatory, buts it good practice, in case auto deploy fails, you can manually download the jar.
 maven-test:
@@ -36,15 +36,15 @@ maven-test:
 autoDeploy:
   stage: autodeploy
   tags:
-   - springboot_tag
+    - springboot_tag
   script:
     - cd Backend/CyFire
     - mvn package
-    - sudo mv target/*.jar /target/web-demo.jar 
+    - sudo mv target/*.jar /target/web-demo.jar
     - sudo systemctl stop system-web-demo
     - sudo systemctl start system-web-demo
 
-    
+
 # To build android projects
 # Notice that we cd into Android_test folder which contains all Android files before building apk.    
 # Ensure the tag matches with the tag created for Android runner
@@ -56,14 +56,14 @@ android-build:
     - export GRADLE_USER_HOME=`pwd`/.gradle
     - chmod +x ./Frontend/loginWithRegisterPage/gradlew
   tags:
-   - android_tag
+    - android_tag
   script:
     - cd Frontend/loginWithRegisterPage
     - ./gradlew assemble --stacktrace
   artifacts:
     paths:
-    - Frontend/loginWithRegisterPage/app/build/outputs/
-    
+      - Frontend/loginWithRegisterPage/app/build/outputs/
+
 # To run Android unit tests.   
 unitTests:
   image: javiersantos/android-ci:latest
@@ -72,7 +72,7 @@ unitTests:
     - export GRADLE_USER_HOME=`pwd`/.gradle
     - chmod +x ./Frontend/loginWithRegisterPage/gradlew
   tags:
-   - android_tag
+    - android_tag
   script:
     - cd Frontend/loginWithRegisterPage
     - ./gradlew test

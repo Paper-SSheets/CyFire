@@ -1,15 +1,13 @@
 package com.example.loginwithregisterpage;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.android.volley.Request;
@@ -17,15 +15,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class profilePage extends AppCompatActivity {
+    String userEmailSelect = null;
     private RequestQueue mQueue;
     private TextView email;
     private TextView name;
@@ -33,8 +29,6 @@ public class profilePage extends AppCompatActivity {
     private TextView userPassword;
     private TextView likeSpace;
     private TextView matchSpace;
-    String userEmailSelect = null;
-
     private BottomNavigationView mProfileNav;       /* Bottom Nav Bar */
     private FrameLayout mProfileFrame;              /* Frame where nav bar is located */
 
@@ -45,6 +39,7 @@ public class profilePage extends AppCompatActivity {
 
     /**
      * Creates the profile page activity
+     *
      * @param savedInstanceState
      */
     @Override
@@ -86,7 +81,7 @@ public class profilePage extends AppCompatActivity {
         mProfileNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch(menuItem.getItemId()) {
+                switch (menuItem.getItemId()) {
                     case R.id.nav_home:
                         setFragment(homeFragment);
                         return true;
@@ -103,7 +98,7 @@ public class profilePage extends AppCompatActivity {
                 return false;
             }
         });
-        userPassword= findViewById(R.id.passwordText);
+        userPassword = findViewById(R.id.passwordText);
 
         mQueue = Volley.newRequestQueue(this);
 
@@ -113,6 +108,7 @@ public class profilePage extends AppCompatActivity {
 
     /**
      * Loads and replaces a fragment in place of another
+     *
      * @param fragment
      */
     private void setFragment(Fragment fragment) {
@@ -165,12 +161,10 @@ public class profilePage extends AppCompatActivity {
     }
 
 
-
     /*
     Opens the feed page
      */
-    private void openFeedPage()
-    {
+    private void openFeedPage() {
         Intent i = new Intent(getApplicationContext(), FeedPage.class);
         startActivity(i);
     }

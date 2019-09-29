@@ -1,17 +1,15 @@
 package com.cyfire.likes;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class LikeService
-{
+import java.util.List;
 
-	@Autowired
-	private LikeRepository repo;
+public class LikeService {
 
-	public List<Likes> getLikesList()
-	{
-		return repo.findAll();
-	}
+    @Autowired
+    private LikeRepository repo;
+
+    public List<Likes> getLikesList() {
+        return repo.findAll();
+    }
 }

@@ -6,17 +6,14 @@ import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**
  * Configuration class for Websockets.
- * 
- * @author Steven Marshall Sheets
  *
+ * @author Steven Marshall Sheets
  */
 @Configuration
-public class WebSocketConfiguration
-{
-	@Bean
-	public ServerEndpointExporter serverEndpointExporter()
-	{
-		return new ServerEndpointExporter();
-	}
-	
+public class WebSocketConfiguration {
+    @Bean
+    public ServerEndpointExporter serverEndpointExporter() {
+        return new ServerEndpointExporter();
+    }
+
 }
